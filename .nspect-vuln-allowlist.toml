@@ -1,0 +1,22 @@
+################################################################################
+# Copyright (c) 2024, NVIDIA CORPORATION. All rights reserved.
+#
+# NVIDIA Corporation and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or
+# distribution of this software and related documentation without an express
+# license agreement from NVIDIA Corporation is strictly prohibited.
+################################################################################
+
+version = "1.0.0"
+
+[oss]
+
+# if you are not adding excluded directories then remove [oss.excluded] and [[oss.excluded.directories]] both tag from file.
+[oss.excluded]
+
+[[oss.excluded.directories]]
+paths = ['tools','tests','post','net','scripts/dtc/libfdt']
+comment = 'We don't enable the features and won't be impacted.'
+# optional attribute (nspect_ids) - Useful for shared repos allow list, if you want to apply exclusion only for specific programs and not for all.
+nspect_ids = ['NSPECT-HYNN-DT36']

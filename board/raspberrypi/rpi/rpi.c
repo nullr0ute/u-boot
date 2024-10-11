@@ -1,3 +1,4 @@
+#define LOG_DEBUG
 // SPDX-License-Identifier: GPL-2.0
 /*
  * (C) Copyright 2012-2016 Stephen Warren
@@ -536,9 +537,12 @@ int copy_property(void *dst, void *src, char *path, char *property)
 /* Copy tweaks from the firmware dtb to the loaded dtb */
 void  update_fdt_from_fw(void *fdt, void *fw_fdt)
 {
+	log_debug("Do we twirk DTs?\n");
 	/* Using dtb from firmware directly; leave it alone */
 	if (fdt == fw_fdt)
 		return;
+
+	log_debug("twirking DTs\n");
 
 	/* The firmware provides a more precise model; so copy that */
 	copy_property(fdt, fw_fdt, "/", "model");
@@ -564,6 +568,8 @@ void  update_fdt_from_fw(void *fdt, void *fw_fdt)
 
 	/* address of the PHY device as provided by the firmware  */
 	copy_property(fdt, fw_fdt, "ethernet0/mdio@e14/ethernet-phy@1", "reg");
+
+	log_debug("DONE! twirking DTs\n");
 }
 
 int ft_board_setup(void *blob, struct bd_info *bd)

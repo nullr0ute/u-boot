@@ -13,10 +13,10 @@ Contributions to the project are welcome. The U-Boot project uses a fairly
 traditional Linux style development workflow using git and `a mailing list
 <https://lists.denx.de/listinfo/u-boot>`_.
 
-Patches should be sent to the mailing list using `git send-email` or the
-equivilant commands using `b4` or `patman` with appropriate sign-off and
+Patches should be sent to the mailing list using ``git send-email`` or the
+equivilant commands using ``b4`` or ``patman`` with appropriate sign-off and
 attributions for the code in question. Maintainers should be copied on mails
-and they can be found with the `./scripts/get_maintainer.pl 0001-fix.patch`
+and they can be found with the ``./scripts/get_maintainer.pl 0001-fix.patch``
 script.
 
 Patch Series
